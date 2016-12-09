@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package wad.service;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -15,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author henriikkakarhuvaara
  */
-public class NewEmptyJUnitTest {
+public class NoTests {
     
-    public NewEmptyJUnitTest() {
+    public NoTests() {
     }
     
     @BeforeClass
