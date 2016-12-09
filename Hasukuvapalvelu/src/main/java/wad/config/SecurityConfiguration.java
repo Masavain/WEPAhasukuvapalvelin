@@ -22,13 +22,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  */
 @Configuration
 @EnableWebSecurity
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
-    
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
     @Autowired
     private UserDetailsService us;
-    
+
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
+    protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .anyRequest().authenticated();
         http
@@ -38,13 +38,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
                 .logout()
                 .permitAll();
     }
-    
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(us).passwordEncoder(passwordEncoder());
         auth.inMemoryAuthentication().withUser("masa").password("huhhuh").roles("USER");
     }
-    
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

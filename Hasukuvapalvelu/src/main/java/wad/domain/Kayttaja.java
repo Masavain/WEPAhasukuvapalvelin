@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import java.util.*;
+import javax.persistence.Column;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
@@ -15,12 +16,14 @@ public class Kayttaja extends AbstractPersistable<Long>{
     
     @NotBlank
     @Length(min = 3, max = 20)
+    @Column(unique=true)
     private String nimimerkki;
     @NotBlank
     @Email
     private String email;
     @NotBlank
     @Length(min = 6)
+    @Column(unique=true)
     private String salasana;
     @OneToMany
     private List<FileObject> fileobjects;

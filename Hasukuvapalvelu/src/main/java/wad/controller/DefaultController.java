@@ -15,6 +15,7 @@ import wad.domain.Kayttaja;
 import wad.repository.FileObjectRepository;
 import wad.repository.KayttajaRepository;
 import java.util.*;
+import org.springframework.security.core.Authentication;
 import wad.domain.Tagays;
 import wad.domain.Tykkays;
 
@@ -44,7 +45,8 @@ public class DefaultController {
     }
 
     @RequestMapping(value = "/etusivu", method = RequestMethod.GET)
-    public String etusivu(Model model) {
+    public String etusivu(Model model, Authentication auth) {
+        model.addAttribute("kayttaja", kayttajaRepo.findByNimimerkki(auth.getName()));
         model.addAttribute("kuvat", foRepo.findAll());
         return "index";
     }
