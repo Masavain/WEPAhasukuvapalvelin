@@ -23,7 +23,7 @@ public class Kayttaja extends AbstractPersistable<Long>{
     @Length(min = 6)
     private String salasana;
     @OneToMany
-    private List<Kuva> kuvat;
+    private List<FileObject> fileobjects;
     @OneToMany
     private List<Kommentti> kommentit;
 

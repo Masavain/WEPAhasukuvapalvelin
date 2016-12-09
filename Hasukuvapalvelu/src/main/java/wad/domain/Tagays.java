@@ -15,5 +15,5 @@ public class Tagays extends AbstractPersistable<Long>{
     private String tagi;
     
     @ManyToMany
-    private List<Kuva> kuvat;
+    private List<FileObject> fileobjects;
 }

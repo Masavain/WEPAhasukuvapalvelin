@@ -13,5 +13,5 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class Tykkays extends AbstractPersistable<Long>{
     private int arvo;
     @ManyToOne
-    private Kuva kuva;
+    private FileObject fileobject;
 }

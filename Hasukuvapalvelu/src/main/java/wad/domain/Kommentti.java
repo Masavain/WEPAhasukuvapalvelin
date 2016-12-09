@@ -16,5 +16,5 @@ public class Kommentti extends AbstractPersistable<Long>{
     private Kayttaja kayttaja;
     
     @ManyToOne
-    private Kuva kuva;
+    private FileObject fileobject;
 }

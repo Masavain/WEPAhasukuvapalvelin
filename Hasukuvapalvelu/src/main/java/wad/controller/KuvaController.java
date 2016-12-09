@@ -6,14 +6,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import wad.repository.KuvaRepository;
+import wad.repository.FileObjectRepository;
 
 @RequestMapping("/kuva")
 @Controller
 public class KuvaController {
     
     @Autowired
-    private KuvaRepository kuvaRepo;
+    private FileObjectRepository foRepo;
     
     @RequestMapping(method = RequestMethod.GET)
     public String getKuva(Model model) {
