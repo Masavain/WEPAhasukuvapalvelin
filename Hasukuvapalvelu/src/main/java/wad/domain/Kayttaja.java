@@ -26,6 +26,31 @@ public class Kayttaja extends AbstractPersistable<Long>{
     private List<Kuva> kuvat;
     @OneToMany
     private List<Kommentti> kommentit;
+
+    public String getNimimerkki() {
+        return nimimerkki;
+    }
+
+    public void setNimimerkki(String nimimerkki) {
+        this.nimimerkki = nimimerkki;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSalasana() {
+        return salasana;
+    }
+
+    public void setSalasana(String salasana) {
+        this.salasana = salasana;
+    }
+    
     
     
 }
