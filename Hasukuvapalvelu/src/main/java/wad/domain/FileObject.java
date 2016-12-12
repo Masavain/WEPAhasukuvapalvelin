@@ -25,6 +25,9 @@ public class FileObject extends AbstractPersistable<Long> {
     @ManyToMany
     private List<Tagays> tagaykset;
     private String nimi;
+
+    public FileObject() {
+    }
     
     
 

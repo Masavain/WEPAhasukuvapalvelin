@@ -41,28 +41,11 @@ public class DefaultController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String redirect(Model model) {
-        return "redirect:/etusivu";
+        return "redirect:/kuvat";
     }
+    
 
-    @RequestMapping(value = "/etusivu", method = RequestMethod.GET)
-    public String etusivu(Model model, Authentication auth) {
-        model.addAttribute("kayttaja", kayttajaRepo.findByNimimerkki(auth.getName()));
-        model.addAttribute("kuvat", foRepo.findAll());
-        return "index";
-    }
 
-    @RequestMapping(value = "/etusivu", method = RequestMethod.POST)
-    public String postKuva(@RequestParam("metadata") String metadata,
-            @RequestParam("file") MultipartFile file) throws IOException {
-        FileObject kuva = new FileObject();
-        kuva.setNimi(metadata);
-        kuva.setContent(file.getBytes());
-        kuva.setSize(file.getSize());
-        kuva.setTagaykset(new ArrayList<Tagays>());
-        kuva.setTykkaukset(new ArrayList<Tykkays>());
-        kuva.setTykkayksienSumma(0);
-        
-        return "redirect:/etusivu";
-    }
+    
 
 }
