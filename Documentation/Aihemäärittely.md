@@ -1,4 +1,4 @@
-**Aihe: **
+**Aihe:**
 
 Kuvapalvelin, jonne käyttäjä voi kirjautua ja lisätä kuvia omista tiedostoistaan. Tällä hetkellä käyttäjä voi myös siirtyä omaan profiiliinsa, jossa hän tulee (myöhemmässä versiossa) näkemään lisäämänsä kuvat.
 
