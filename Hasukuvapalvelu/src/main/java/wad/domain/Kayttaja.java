@@ -6,6 +6,8 @@ import javax.persistence.OneToMany;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import java.util.*;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.FetchType;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
@@ -29,6 +31,10 @@ public class Kayttaja extends AbstractPersistable<Long>{
     private List<FileObject> fileobjects;
     @OneToMany
     private List<Kommentti> kommentit;
+    
+    
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<String> authorities;
 
     public String getNimimerkki() {
         return nimimerkki;
@@ -54,6 +60,12 @@ public class Kayttaja extends AbstractPersistable<Long>{
         this.salasana = salasana;
     }
     
-    
+    public List<String> getAuthorities() {
+        return authorities;
+    }
+ 
+    public void setAuthorities(List<String> authorities) {
+        this.authorities = authorities;
+    }
     
 }

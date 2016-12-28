@@ -38,6 +38,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/etusivu").permitAll()
+                .antMatchers("/salatutsivut").hasAnyAuthority("USER", "ADMIN")
+                .antMatchers("/adminsivut").hasAnyAuthority("ADMIN")
                 .anyRequest().authenticated();
         http
                 .formLogin()
@@ -51,7 +54,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(us).passwordEncoder(passwordEncoder());
-        auth.inMemoryAuthentication().withUser("masa").password("huhhuh").roles("USER");
+        auth.inMemoryAuthentication().withUser("masa").password("huhhuh").roles("ADMIN");
+        auth.inMemoryAuthentication().withUser("henu").password("hehheh").roles("USER");
+        
     }
 
     @Bean

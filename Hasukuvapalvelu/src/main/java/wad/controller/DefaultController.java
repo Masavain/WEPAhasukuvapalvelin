@@ -32,11 +32,28 @@ public class DefaultController {
 
     @PostConstruct
     public void init() {
-        Kayttaja k = new Kayttaja();
-        k.setNimimerkki("masa");
-        k.setSalasana(passwordEncoder.encode("huhhuh"));
-        k.setEmail("asdasd@asdasd.com");
-        kayttajaRepo.save(k);
+        Kayttaja masa = new Kayttaja();
+        masa.setNimimerkki("masa");
+        masa.setSalasana(passwordEncoder.encode("huhhuh"));
+        masa.setEmail("asdasd@asdasd.com");
+        masa.setAuthorities(Arrays.asList("ADMIN"));
+        kayttajaRepo.save(masa);
+        
+        Kayttaja henu = new Kayttaja();
+        henu.setNimimerkki("henu");
+        henu.setSalasana(passwordEncoder.encode("hehheh"));
+        henu.setEmail("henu@asdasd.com");
+        henu.setAuthorities(Arrays.asList("USER"));
+        kayttajaRepo.save(henu);
+        
+        Kayttaja repe = new Kayttaja();
+        repe.setNimimerkki("repe");
+        repe.setSalasana(passwordEncoder.encode("hahhah"));
+        repe.setEmail("repe@asdasd.com");
+        repe.setAuthorities(Arrays.asList("USER","ADMIN"));
+        kayttajaRepo.save(repe);
+        
+        
     }
 
     @RequestMapping(method = RequestMethod.GET)

@@ -27,6 +27,12 @@ public class CustomUserDetailsService implements UserDetailsService {
         if (account == null) {
             throw new UsernameNotFoundException("No such user: " + username);
         }
+    
+    
+    List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        for (String authority : account.getAuthorities()) {
+            authorities.add(new SimpleGrantedAuthority(authority));
+        }
 
 
         return new org.springframework.security.core.userdetails.User(
@@ -36,6 +42,6 @@ public class CustomUserDetailsService implements UserDetailsService {
                 true,
                 true,
                 true,
-                Arrays.asList(new SimpleGrantedAuthority("USER")));
+                authorities);
     }
 }
