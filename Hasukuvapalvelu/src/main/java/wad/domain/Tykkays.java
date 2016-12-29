@@ -10,8 +10,39 @@ import javax.persistence.ManyToOne;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
-public class Tykkays extends AbstractPersistable<Long>{
+public class Tykkays extends AbstractPersistable<Long> {
+
     private int arvo;
     @ManyToOne
     private FileObject fileobject;
+    @ManyToOne
+    private Kayttaja kayttaja;
+
+    public Tykkays() {
+    }
+
+    public Kayttaja getKayttaja() {
+        return kayttaja;
+    }
+
+    public void setKayttaja(Kayttaja kayttaja) {
+        this.kayttaja = kayttaja;
+    }
+
+    public int getArvo() {
+        return arvo;
+    }
+
+    public void setArvo(int arvo) {
+        this.arvo = arvo;
+    }
+
+    public FileObject getFileobject() {
+        return fileobject;
+    }
+
+    public void setFileobject(FileObject fileobject) {
+        this.fileobject = fileobject;
+    }
+
 }

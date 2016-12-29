@@ -31,7 +31,15 @@ public class FileObject extends AbstractPersistable<Long> {
     public FileObject() {
     }
     
+    public void upvote(Tykkays t) {
+        this.tykkaukset.add(t);
+        this.tykkayksienSumma++;
+    }
     
+    public void downvote(Tykkays t) {
+        this.tykkaukset.add(t);
+        this.tykkayksienSumma--;
+    }
 
     public List<Tykkays> getTykkaukset() {
         return tykkaukset;
@@ -65,6 +73,10 @@ public class FileObject extends AbstractPersistable<Long> {
         this.tagaykset = tagaykset;
     }
 
+    public void addTagays(Tagays tag) {
+        this.tagaykset.add(tag);
+    }
+    
     public String getNimi() {
         return nimi;
     }

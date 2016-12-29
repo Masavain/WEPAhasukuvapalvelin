@@ -1,7 +1,7 @@
 package wad.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -19,6 +19,8 @@ import wad.domain.Tykkays;
 import wad.repository.FileObjectRepository;
 import wad.repository.KayttajaRepository;
 import wad.repository.KommenttiRepository;
+import wad.repository.TagaysRepository;
+import wad.repository.TykkaysRepository;
 
 @Controller
 public class KuvaController {
@@ -29,6 +31,10 @@ public class KuvaController {
     private KayttajaRepository kayttajaRepo;
     @Autowired
     private KommenttiRepository kommenttiRepo;
+    @Autowired
+    private TykkaysRepository tykkaysRepo;
+    @Autowired
+    private TagaysRepository tagRepo;
 
     @RequestMapping(value = "/kuvat", method = RequestMethod.GET)
     public String getKuvat() {
@@ -45,6 +51,7 @@ public class KuvaController {
         kuva.setTykkaukset(new ArrayList<Tykkays>());
         kuva.setLisaaja(kayttajaRepo.findByNimimerkki(auth.getName()));
         kuva.setTykkayksienSumma(0);
+
         foRepo.save(kuva);
         return "redirect:/kuvat";
     }
@@ -64,16 +71,25 @@ public class KuvaController {
         }
 
         model.addAttribute("current", id);
+        model.addAttribute("currentPic", foRepo.findOne(id));
         model.addAttribute("kommentit", kommenttiRepo.findByFileobject(foRepo.findOne(id)));
+        List<Tykkays> tykkaykset = tykkaysRepo.findByFileobject(foRepo.findOne(id));
+
+        int tykkayksienSumma = 0;
+        for (Tykkays t : tykkaykset) {
+            tykkayksienSumma = tykkayksienSumma + t.getArvo();
+        }
+        model.addAttribute("tykkaykset", tykkayksienSumma + "");
+
         return "index";
     }
-    
+
     @RequestMapping(value = "/kuvat/{id}/content", method = RequestMethod.GET, produces = "image/jpeg")
     @ResponseBody
-    public byte[] getContent(@PathVariable Long id) throws Exception{
+    public byte[] getContent(@PathVariable Long id) throws Exception {
         return foRepo.findOne(id).getContent();
     }
-    
+
     @RequestMapping(value = "/kuvat/{id}/kommentti", method = RequestMethod.POST)
     public String kommentoi(Authentication auth, @PathVariable Long id, @RequestParam String content) {
         Kommentti kommentti = new Kommentti();
@@ -81,7 +97,36 @@ public class KuvaController {
         kommentti.setKayttaja(kayttajaRepo.findByNimimerkki(auth.getName()));
         kommentti.setSisalto(content);
         kommenttiRepo.save(kommentti);
-        return "redirect:/kuvat";
+        return "redirect:/kuvat/" + id;
+    }
+
+    @RequestMapping(value = "/kuvat/{id}/upvote", method = RequestMethod.POST)
+    public String tykkaa(Authentication auth, @PathVariable Long id) {
+        FileObject kuva = foRepo.findOne(id);
+        if (!tykkaysRepo.findByKayttajaAndFileobject(kayttajaRepo.findByNimimerkki(auth.getName()), kuva).isEmpty()) {
+            return "redirect:/kuvat/" + id;
+        }
+
+        Tykkays t = new Tykkays();
+        t.setKayttaja(kayttajaRepo.findByNimimerkki(auth.getName()));
+        t.setFileobject(kuva);
+        t.setArvo(1);
+        tykkaysRepo.save(t);
+        return "redirect:/kuvat/" + id;
+    }
+
+    @RequestMapping(value = "/kuvat/{id}/downvote", method = RequestMethod.POST)
+    public String epatykkaa(Authentication auth, @PathVariable Long id) {
+        FileObject kuva = foRepo.findOne(id);
+        if (!tykkaysRepo.findByKayttajaAndFileobject(kayttajaRepo.findByNimimerkki(auth.getName()), kuva).isEmpty()) {
+            return "redirect:/kuvat/" + id;
+        }
+        Tykkays t = new Tykkays();
+        t.setKayttaja(kayttajaRepo.findByNimimerkki(auth.getName()));
+        t.setFileobject(kuva);
+        t.setArvo(-1);
+        tykkaysRepo.save(t);
+        return "redirect:/kuvat/" + id;
     }
 
 }
