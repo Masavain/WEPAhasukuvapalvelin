@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${kayttaja.nimimerkki}">Käyttäjäsivu</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>        
+        <a href="/kuvat">kuvavirta</a><br/>
+        <h2>Käyttäjä <span th:text="${kayttaja.nimimerkki}">JCVD</span></h2>
+
+        <table>
+            <tr th:each="kuva : ${kuvat}">
+                <td>
+                    <a th:href="@{/kuvat/{id}(id=${kuva.id})}">
+                        <img th:src="@{/kuvat/{id}/content(id=${kuva.id})}"/>
+                    </a>
+                </td>
+
+
+            </tr>
+        </table>
+
+
+        <a href="/login?logout">kirjaudu ulos</a><br/>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+wad/domain/Kommentti.class
+wad/config/SecurityConfiguration.class
+wad/controller/DefaultController.class
+wad/domain/Tykkays.class
+wad/controller/FileObjectController.class
+wad/Hasukuvapalvelu.class
+wad/domain/FileObject.class
+wad/repository/TagaysRepository.class
+wad/repository/KayttajaRepository.class
+wad/controller/KayttajaController.class
+wad/controller/KuvaController.class
+wad/service/CustomUserDetailsService.class
+wad/domain/Kayttaja.class
+wad/repository/TykkaysRepository.class
+wad/repository/KommenttiRepository.class
+wad/domain/Tagays.class
+wad/repository/FileObjectRepository.class
