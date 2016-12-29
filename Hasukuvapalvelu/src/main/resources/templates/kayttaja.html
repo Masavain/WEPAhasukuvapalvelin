@@ -13,7 +13,18 @@ and open the template in the editor.
     <body>        
         <a href="/kuvat">kuvavirta</a><br/>
         <h2>Käyttäjä <span th:text="${kayttaja.nimimerkki}">JCVD</span></h2>
-
-
+        
+        <table>
+            <tr th:each="kuva : ${kuvat}">
+                <td>
+                    <img th:src="@{/kuvat/{id}/content(id=${kuva.id})}"/>
+                </td>
+                
+                
+            </tr>
+        </table>
+        
+        
+        <a href="/login?logout">kirjaudu ulos</a><br/>
     </body>
 </html>

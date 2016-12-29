@@ -32,13 +32,14 @@ public class KuvaController {
     }
 
     @RequestMapping(value = "/kuvat", method = RequestMethod.POST)
-    public String postKuva(@RequestParam("file") MultipartFile file) throws IOException {
+    public String postKuva(Authentication auth, @RequestParam("file") MultipartFile file) throws IOException {
         FileObject kuva = new FileObject();
         kuva.setNimi(file.getOriginalFilename());
         kuva.setContent(file.getBytes());
         kuva.setSize(file.getSize());
         kuva.setTagaykset(new ArrayList<Tagays>());
         kuva.setTykkaukset(new ArrayList<Tykkays>());
+        kuva.setLisaaja(kayttajaRepo.findByNimimerkki(auth.getName()));
         kuva.setTykkayksienSumma(0);
         foRepo.save(kuva);
         return "redirect:/kuvat";
