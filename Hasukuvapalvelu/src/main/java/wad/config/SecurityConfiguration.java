@@ -56,7 +56,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(us).passwordEncoder(passwordEncoder());
         auth.inMemoryAuthentication().withUser("masa").password("huhhuh").roles("ADMIN");
         auth.inMemoryAuthentication().withUser("henu").password("hehheh").roles("USER");
-        
+        auth.inMemoryAuthentication().withUser("repe").password("hahhah").roles("USER","ADMIN");
+
     }
 
     @Bean
