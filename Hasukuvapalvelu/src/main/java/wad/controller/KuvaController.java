@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import wad.domain.FileObject;
+import wad.domain.Kommentti;
 import wad.domain.Tagays;
 import wad.domain.Tykkays;
 import wad.repository.FileObjectRepository;
 import wad.repository.KayttajaRepository;
+import wad.repository.KommenttiRepository;
 
 @Controller
 public class KuvaController {
@@ -25,6 +27,8 @@ public class KuvaController {
     private FileObjectRepository foRepo;
     @Autowired
     private KayttajaRepository kayttajaRepo;
+    @Autowired
+    private KommenttiRepository kommenttiRepo;
 
     @RequestMapping(value = "/kuvat", method = RequestMethod.GET)
     public String getKuvat() {
@@ -60,6 +64,7 @@ public class KuvaController {
         }
 
         model.addAttribute("current", id);
+        model.addAttribute("kommentit", kommenttiRepo.findByFileobject(foRepo.findOne(id)));
         return "index";
     }
     
@@ -67,6 +72,16 @@ public class KuvaController {
     @ResponseBody
     public byte[] getContent(@PathVariable Long id) throws Exception{
         return foRepo.findOne(id).getContent();
+    }
+    
+    @RequestMapping(value = "/kuvat/{id}/kommentti", method = RequestMethod.POST)
+    public String kommentoi(Authentication auth, @PathVariable Long id, @RequestParam String content) {
+        Kommentti kommentti = new Kommentti();
+        kommentti.setFileobject(foRepo.findOne(id));
+        kommentti.setKayttaja(kayttajaRepo.findByNimimerkki(auth.getName()));
+        kommentti.setSisalto(content);
+        kommenttiRepo.save(kommentti);
+        return "redirect:/kuvat";
     }
 
 }

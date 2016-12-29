@@ -16,4 +16,33 @@ public class Kommentti extends AbstractPersistable<Long> {
 
     @ManyToOne
     private FileObject fileobject;
+
+    public Kommentti() {
+    }
+
+    public String getSisalto() {
+        return sisalto;
+    }
+
+    public void setSisalto(String sisalto) {
+        this.sisalto = sisalto;
+    }
+
+    public Kayttaja getKayttaja() {
+        return kayttaja;
+    }
+
+    public void setKayttaja(Kayttaja kayttaja) {
+        this.kayttaja = kayttaja;
+    }
+
+    public FileObject getFileobject() {
+        return fileobject;
+    }
+
+    public void setFileobject(FileObject fileobject) {
+        this.fileobject = fileobject;
+    }
+    
+    
 }

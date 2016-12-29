@@ -7,11 +7,9 @@ package wad.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import wad.domain.Kommentti;
+import java.util.*;
+import wad.domain.FileObject;
 
-/**
- *
- * @author anttikoivurova
- */
 public interface KommenttiRepository extends JpaRepository<Kommentti, Long>{
-    
+    List<Kommentti> findByFileobject(FileObject fileobject);
 }

@@ -20,6 +20,18 @@
         <div th:if="${next != null}">
             <a th:href="@{/kuvat/{id}(id=${next})}">Seuraava</a>
         </div>
+        
+        <ul>
+            <li th:each="kommentti : ${kommentit}">
+                <span th:text="${kommentti.kayttaja.nimimerkki}">title</span>
+                <pre th:utext="${kommentti.sisalto}">content</pre>
+            </li>
+        </ul>
+        
+        <form th:action="@{/kuvat/{id}/kommentti(id=${current})}" method="POST">
+            <p><textarea name="content"></textarea></p>
+            <input type="submit" value="Lisää Kommentti"></input>
+        </form>
 
         <form method="POST" action="/kuvat" enctype="multipart/form-data">
             <input type="file" name="file" id="file"/>
