@@ -1,37 +1,43 @@
 **Aihe:**
 
-Kuvapalvelin, jonne käyttäjä voi kirjautua ja lisätä kuvia omista tiedostoistaan. Tällä hetkellä käyttäjä voi myös siirtyä omaan profiiliinsa, jossa hän tulee (myöhemmässä versiossa) näkemään lisäämänsä kuvat.
+Kuvapalvelin, jonne käyttäjä voi kirjautua ja lisätä kuvia omista tiedostoistaan. Käyttäjä voi siirtyä omaan profiiliinsa, jossa hän näkee hänen lisäämänsä kuvat. 
 
-Palvelimeen tulee tykkäys- ja tagaysmahdollisuus.
+Käyttäjän voi siirtyä kuvavirtaan, jossa hän näkee muiden lisäämiä kuvia. Käyttäjä voi kommentoida ja tykätä/epätykätä omista ja muiden kuvista. Jokaisen kommentin yläpuolella on kommentoijan nimimerkki, jota painamalla pääsee kommentoijan profiiliin.
 
-Tällä hetkellä palvelimella on vain yksi käyttäjä, joka voi päästä lisäämään kuvia.
+Jos käyttäjällä ei ole tunnusta sivustolle, on hänellä mahdollisuus luoda sellainen toisella sivulla. Tänne hän pääsee kirjautumissivulla olevasta linkistä. 
 
 
-**Kuvapalvelimen rakenne:**
+_Toteutetut käyttötapaukset:_
 
 Profiili
 * yläosassa käyttäjän nimi
-* käyttäjän lisäämät kuvat (ei toteutettu)
-* linkki kuvien lisäys -sivulle (ei toteutettu)
-* linkki uloskirjautumiseen (ei toteutettu)
+* linkki kuvavirtaan ja uloskirjautumiseen
+* käyttäjän lisäämät kuvat
+* kuvaa painamalla käyttäjä ohjataan kuvavirtaan, missä mahdollisuus kommentoida ja tykätä
 
 Kuvavirta
-*	kuvavirta
-*	kuvien lisäys
-*	linkki profiiliin
-*	kirjautumattomat käyttäjät voivat nähdä (ei toteutettu)
-
-Kuva-sivu (ei toteutettu)
-*	valittu kuva
-*	tykkäysten määrä
-*	kommentit listattuna kuvan alle
-*	kommentointikenttä + “lisää kommentti”
-
-Rekisteröintisivu (ei toteutettu)
-*	nimimerkin valinta
-*	salasana
-*	“luo käyttäjä”
-*	linkki kirjaudu sisään sivulle
+* kuvavirta
+* kuva
+* kuvien selaus: edellinen ja seuraava
+* kuvien lisäys omista tiedostoista
+* kuvien kommentointi mahdollisuus
+* mahdollisuus tykätä/ei-tykätä kuvasta
+* linkki profiiliin ja uloskirjautumiseen
 
 
+_Ei toteutetut:_
 
+Kuvavirran ominaisuus
+* Tarkoituksena oli, että kirjautumaton käyttäjä voi nähdä kuvavirran. Toteutus ei onnistunut rekisteröitymissivua luodessa tulleiden ongelmien vuoksi
+
+Rekisteröintisivu
+* Tarkoituksena oli luoda sivu, jossa uusi käyttäjä voisi rekisteröityä palveluun. Rekisteröitymisen jälkeen käyttäjä voi siirtyä kirjautumissivulle ja kirjauduttua lisätä omia kuviaan. Rekisteröitymissivun saimme tehtyä, mutta sen liittäminen projektiin ei onnistunut.
+
+
+
+Oma kirjautumissivu
+* Palvelussa on jo kirjautumissivu, mutta olisimme halunneet erilaisen kirjautumissivun, jossa olisi linkki rekisteröitymissivulle. Tämän sivun saimme tehtyä, mutta sen liittäminen projektiin ei jostain syystä onnistunut.
+
+Tagays
+* tietokantataulu, joka kuvan tietokantataulun kanssa monen-suhde-moneen
+* Tarkoituksena: Käyttäjä voi lisätä kuvaansa tageja. Yhdellä tagilla voi olla myös muitakin kuvia ja kullakin kuvalla voi olla muitakin tageja. Tagia klikatessa käyttäjän olisi ollut mahdollista nähdä muut samalla tagilla merkityt kuvat.
