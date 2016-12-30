@@ -81,5 +81,23 @@ public class DomainTesteja {
         assertEquals(fileObject, loydettyKommentti.getFileobject());
 
     }
+    
+    @Test
+    public void tallentuukoFileObject() {
+        //tutkitaan samaan tapaan kuin aiemmat
+    }
+    
+    @Test
+    public void tallentuukoTykkays() {
+        //Tutkitaan samaan tapaan kuin aiemmat
+    }
+    
+    @Test 
+    public void tallentuukoTagays() {
+        //Tutkitaan samaan tapaan kuin aiemmat
+    }
+
+    
+    
 
 }
