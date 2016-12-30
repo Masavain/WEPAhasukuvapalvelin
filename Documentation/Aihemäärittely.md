@@ -7,6 +7,7 @@ Käyttäjän voi siirtyä kuvavirtaan, jossa hän näkee muiden lisäämiä kuvi
 Jos käyttäjällä ei ole tunnusta sivustolle, on hänellä mahdollisuus luoda sellainen toisella sivulla. Tänne hän pääsee kirjautumissivulla olevasta linkistä. 
 
 
+
 _Toteutetut käyttötapaukset:_
 
 Profiili
@@ -30,8 +31,8 @@ _Ei toteutetut:_
 Kuvavirran ominaisuus
 * Tarkoituksena oli, että kirjautumaton käyttäjä voi nähdä kuvavirran. Toteutus ei onnistunut rekisteröitymissivua luodessa tulleiden ongelmien vuoksi
 
-Rekisteröintisivu
-* Tarkoituksena oli luoda sivu, jossa uusi käyttäjä voisi rekisteröityä palveluun. Rekisteröitymisen jälkeen käyttäjä voi siirtyä kirjautumissivulle ja kirjauduttua lisätä omia kuviaan. Rekisteröitymissivun saimme tehtyä, mutta sen liittäminen projektiin ei onnistunut.
+Rekisteröitymissivu
+* Tarkoituksena oli luoda sivu, jossa uusi käyttäjä voisi rekisteröityä palveluun. Rekisteröitymisen jälkeen käyttäjä voi siirtyä kirjautumissivulle ja kirjauduttua lisätä omia kuviaan. Rekisteröitymissivun saimme tehtyä, mutta sen liittäminen projektiin ei onnistunut. Käyttötapauskaavio on luotu tämän mukaiseksi.
 
 
 
