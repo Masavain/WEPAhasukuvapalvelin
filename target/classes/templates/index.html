@@ -4,29 +4,44 @@
     <head lang="en">
         <meta charset="UTF-8"/>
         <title th:text="hasukuvapalvelu">Hasukuvapalvelu</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                background-color: darkgrey
+            }
+        </style>
     </head>
-    <body>
+
+    <body class="container">
         <a th:href="@{/kayttaja/{id}(id=${kayttaja.id})}"> profiili </a>
         <h2>kuvavirta</h2>
 
-        <div th:if="${currentPic != null}">
+        <form method="POST" action="/kuvat" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" required="required"/>
+            <input type="submit" value="lisää kuva!"/>
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        </form>
+        
+        <div th:if="${currentPic != null}" class="container">
             <img th:src="@{/kuvat/{id}/content(id=${current})}"/>
         </div>
-
-        <div th:if="${previous != null}">
+        
+        <div th:if="${previous != null}" class="container">
             <a th:href="@{/kuvat/{id}(id=${previous})}">Edellinen</a>
         </div>
-
-        <div th:if="${next != null}">
+        
+        <div th:if="${next != null}" class="container">
             <a th:href="@{/kuvat/{id}(id=${next})}">Seuraava</a>
         </div>
-
-        <div th:if="${currentPic != null}">
+        
+        <div th:if="${currentPic != null}" class="container">
             <h3>tykkäykset:</h3>
             <h3 th:text="${tykkaykset}">total votes</h3>
         </div>
-
-        <div th:if="${currentPic != null}">
+        
+        <div th:if="${currentPic != null}" class="container">
             <form th:action="@{/kuvat/{id}/upvote(id=${current})}" method="POST">
                 <input type="submit" value="upvote"/>
             </form>
@@ -34,33 +49,27 @@
                 <input type="submit" value="downvote"/>
             </form>
 
-        
-        <h3>kommentit:</h3>
-        <ul>
-            <li th:each="kommentti : ${kommentit}">
-                <a th:href="@{/kayttaja/{id}(id=${kommentti.kayttaja.id})}">
-                    <span th:text="${kommentti.kayttaja.nimimerkki}">title</span>
-                </a>
-                <pre th:utext="${kommentti.sisalto}">content</pre>
-            </li>
-        </ul>
-        <form th:action="@{/kuvat/{id}/kommentti(id=${current})}" method="POST">
-            <p><textarea name="content"></textarea></p>
-            <input type="submit" value="Lisää Kommentti"></input>
-        </form>
+
+            <h3>kommentit:</h3>
+            <ul>
+                <li th:each="kommentti : ${kommentit}">
+                    <a th:href="@{/kayttaja/{id}(id=${kommentti.kayttaja.id})}">
+                        <span th:text="${kommentti.kayttaja.nimimerkki}">title</span>
+                    </a>
+                    <pre th:utext="${kommentti.sisalto}">content</pre>
+                </li>
+            </ul>
+
+            <form th:action="@{/kuvat/{id}/kommentti(id=${current})}" method="POST">
+                <p><textarea name="content"></textarea></p>
+                <input type="submit" value="Lisää Kommentti"></input>
+            </form>
         </div>
-        
-        
-        
-
-        <form method="POST" action="/kuvat" enctype="multipart/form-data">
-            <input type="file" name="file" id="file" required="required"/>
-            <input type="submit" value="lisää kuva!"/>
-            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-        </form>
 
 
-        <a href="/login?logout">kirjaudu ulos</a><br/>
+        <a href="/login?logout">
+            <button>Kirjaudu ulos</button>
+        </a><br/>
 
     </body>
 </html>

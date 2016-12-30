@@ -9,12 +9,20 @@ and open the template in the editor.
         <title th:text="${kayttaja.nimimerkki}">Käyttäjäsivu</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                background-color: darkgrey
+            }
+        </style>
     </head>
-    <body>        
+    <body class="container-fluid">
         <a href="/kuvat">kuvavirta</a><br/>
-        <h2>Käyttäjä <span th:text="${kayttaja.nimimerkki}">JCVD</span></h2>
-
-        <table>
+        <h2>Käyttäjä: <span th:text="${kayttaja.nimimerkki}">JCVD</span></h2>
+        
+        <table class="table">
             <tr th:each="kuva : ${kuvat}">
                 <td>
                     <a th:href="@{/kuvat/{id}(id=${kuva.id})}">
@@ -27,6 +35,8 @@ and open the template in the editor.
         </table>
 
 
-        <a href="/login?logout">kirjaudu ulos</a><br/>
+        <a href="/login?logout">
+            <button>Kirjaudu ulos</button>
+        </a><br/>
     </body>
 </html>
