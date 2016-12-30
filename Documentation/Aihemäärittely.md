@@ -17,29 +17,28 @@ Profiili
 * yläosassa käyttäjän nimimerkki
 * linkki kuvavirtaan ja uloskirjautumiseen
 * käyttäjän lisäämät kuvat
-* kuvaa painamalla käyttäjä ohjataan kuvavirtaan, missä mahdollisuus kommentoida ja tykätä
+* kuvaa painamalla käyttäjä ohjataan kuvavirtaan, missä mahdollisuus kommentoida ja tykätä klikatusta kuvasta
 
 Kuvavirta
-* kuvavirta
-* kuva
+* sisältää järjestelmän kuvavirran, yksi kuva kerrallaan näkyvissä
 * kuvien selaus: edellinen ja seuraava
 * kuvien lisäys omista tiedostoista
-* kuvien kommentointi mahdollisuus
+* kuvien kommentointimahdollisuus
 * mahdollisuus tykätä/ei-tykätä kuvasta
 * linkki profiiliin ja uloskirjautumiseen
 
 
 _Ei toteutetut:_
 
-Kuvavirran näkyminen kirjautumattomalle käyttäjälle
-* Tarkoituksena oli, että kirjautumaton käyttäjä voi nähdä kuvavirran. Toteutus ei onnistunut rekisteröitymissivua luodessa tulleiden ongelmien vuoksi
-
 Rekisteröitymissivu
-* Tarkoituksena oli luoda sivu, jossa uusi käyttäjä voisi rekisteröityä palveluun. Rekisteröitymisen jälkeen käyttäjä voisi siirtyä kirjautumissivulle ja kirjauduttua lisätä omia kuviaan. Rekisteröitymissivun saimme tehtyä, mutta sen liittäminen projektiin ei onnistunut. Käyttötapauskaavio on luotu tämän mukaiseksi.
+* Tarkoituksena oli luoda sivu, jossa uusi käyttäjä voisi rekisteröityä palveluun. Rekisteröitymisen jälkeen käyttäjä voisi siirtyä kirjautumissivulle ja kirjauduttua lisätä omia kuviaan. Rekisteröitymissivun saimme tehtyä, mutta sen liittäminen projektiin ei onnistunut. 
+
+Kuvavirran näkyminen kirjautumattomalle käyttäjälle
+* Tarkoituksena oli, että kirjautumaton käyttäjä voisi nähdä kuvavirran. Toteutus ei onnistunut rekisteröitymissivua luodessa tulleiden ongelmien vuoksi
 
 Oma kirjautumissivu
 * Palvelussa on jo kirjautumissivu, mutta olisimme halunneet erilaisen kirjautumissivun, jossa olisi linkki rekisteröitymissivulle. Tämän sivun saimme tehtyä, mutta sen liittäminen projektiin ei jostain syystä onnistunut.
 
 Tagays
 * tietokantataulu, joka on kuvan tietokantataulun kanssa monen-suhde-moneen yhteydessä
-* Tarkoituksena: Käyttäjä voi lisätä kuvaansa tageja. Yhdellä tagilla voi olla myös muitakin kuvia ja kullakin kuvalla voi olla muitakin tageja. Tagia klikatessa käyttäjän olisi ollut mahdollista nähdä muut samalla tagilla merkityt kuvat.
+* Tarkoituksena: Käyttäjä voi lisätä kuvaansa tageja. Yhteen tagiin voisi liittyä muitakin kuvia, ja kullakin kuvalla voisi olla useita tageja. Tagia klikatessa käyttäjän olisi ollut mahdollista nähdä muut samalla tagilla merkityt kuvat.
