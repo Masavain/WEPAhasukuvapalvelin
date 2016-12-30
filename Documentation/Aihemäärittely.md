@@ -28,7 +28,7 @@ Kuvavirta
 * linkki profiiliin ja uloskirjautumiseen
 
 
-_Ei toteutetut:_
+_Toteutus ei onnistunut:_
 
 Rekisteröitymissivu
 * Tarkoituksena oli luoda sivu, jossa uusi käyttäjä voisi rekisteröityä palveluun. Rekisteröitymisen jälkeen käyttäjä voisi siirtyä kirjautumissivulle ja kirjauduttua lisätä omia kuviaan. Rekisteröitymissivun saimme tehtyä, mutta sen liittäminen projektiin ei onnistunut. 
