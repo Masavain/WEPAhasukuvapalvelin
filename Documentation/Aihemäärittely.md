@@ -2,7 +2,7 @@
 
 Kuvapalvelin, jonne käyttäjä voi kirjautua ja lisätä kuvia omista tiedostoistaan. Käyttäjä voi siirtyä omaan profiiliinsa, jossa hän näkee lisäämänsä kuvat. 
 
-Käyttäjä voi siirtyä kuvavirtaan, jossa hän näkee myös muiden lisäämiä kuvia. Käyttäjä voi kommentoida ja tykätä/epätykätä omista ja muiden kuvista. Jokaisen kommentin yläpuolella on kommentoijan nimimerkki, jota painamalla pääsee kommentoijan profiiliin.
+Käyttäjä voi siirtyä kuvavirtaan, jossa hän näkee myös muiden lisäämiä kuvia. Käyttäjä voi kommentoida ja tykätä/epätykätä omista ja muiden kuvista. Jokaisen kommentin yläpuolella on kommentoijan nimimerkki, jota painamalla pääsee kommentoijan profiiliin. Profiilissa olevia kuvia voi klikata, jolloin niitä pääsee kommentoimaan ja tykkäämään/epätykkäämään.
 
 Jos käyttäjällä ei ole tunnusta sivustolle, on hänellä mahdollisuus luoda sellainen toisella sivulla. Tänne hän pääsee kirjautumissivulla olevasta linkistä. (Tämän toteuttaminen ei onnistunut.)
 
