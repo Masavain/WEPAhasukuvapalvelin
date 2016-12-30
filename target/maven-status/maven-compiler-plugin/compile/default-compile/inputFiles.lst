@@ -1,0 +1,17 @@
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/repository/KommenttiRepository.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/service/CustomUserDetailsService.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/domain/Kayttaja.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/domain/Kommentti.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/domain/Tykkays.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/controller/FileObjectController.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/repository/FileObjectRepository.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/repository/KayttajaRepository.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/domain/FileObject.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/domain/Tagays.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/controller/KayttajaController.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/repository/TykkaysRepository.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/controller/DefaultController.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/config/SecurityConfiguration.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/controller/KuvaController.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/Hasukuvapalvelu.java
+/Users/henriikkakarhuvaara/WEPAhasukuvapalvelin/src/main/java/wad/repository/TagaysRepository.java

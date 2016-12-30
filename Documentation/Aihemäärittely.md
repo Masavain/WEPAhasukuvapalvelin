@@ -1,37 +1,46 @@
 **Aihe:**
 
-Kuvapalvelin, jonne käyttäjä voi kirjautua ja lisätä kuvia omista tiedostoistaan. Tällä hetkellä käyttäjä voi myös siirtyä omaan profiiliinsa, jossa hän tulee (myöhemmässä versiossa) näkemään lisäämänsä kuvat.
+Kuvapalvelin, jonne käyttäjä voi kirjautua ja lisätä kuvia omista tiedostoistaan. Käyttäjä voi siirtyä omaan profiiliinsa, jossa hän näkee lisäämänsä kuvat. 
 
-Palvelimeen tulee tykkäys- ja tagaysmahdollisuus.
+Käyttäjä voi siirtyä kuvavirtaan, jossa hän näkee myös muiden lisäämiä kuvia. Käyttäjä voi kommentoida ja tykätä/epätykätä omista ja muiden kuvista. Jokaisen kommentin yläpuolella on kommentoijan nimimerkki, jota painamalla pääsee kommentoijan profiiliin. Profiilissa olevia kuvia voi klikata, jolloin niitä pääsee kommentoimaan ja tykkäämään/epätykkäämään.
 
-Tällä hetkellä palvelimella on vain yksi käyttäjä, joka voi päästä lisäämään kuvia.
+Jos käyttäjällä ei ole tunnusta sivustolle, on hänellä mahdollisuus luoda sellainen toisella sivulla. Tänne hän pääsee kirjautumissivulla olevasta linkistä. (Tämän toteuttaminen ei onnistunut.)
 
 
-**Kuvapalvelimen rakenne:**
+
+**Toteutetut ominaisuudet:**
+
+Kirjautumissivu
+* käyttäjä voi kirjautua sisään syöttämällä järjestelmään rekisteröidyn nimimerkin ja salasanan
 
 Profiili
-* yläosassa käyttäjän nimi
-* käyttäjän lisäämät kuvat (ei toteutettu)
-* linkki kuvien lisäys -sivulle (ei toteutettu)
-* linkki uloskirjautumiseen (ei toteutettu)
+* yläosassa käyttäjän nimimerkki
+* linkki kuvavirtaan ja uloskirjautumiseen
+* käyttäjän lisäämät kuvat
+* kuvaa painamalla käyttäjä ohjataan kuvavirtaan, missä mahdollisuus kommentoida ja tykätä klikatusta kuvasta
 
 Kuvavirta
-*	kuvavirta
-*	kuvien lisäys
-*	linkki profiiliin
-*	kirjautumattomat käyttäjät voivat nähdä (ei toteutettu)
-
-Kuva-sivu (ei toteutettu)
-*	valittu kuva
-*	tykkäysten määrä
-*	kommentit listattuna kuvan alle
-*	kommentointikenttä + “lisää kommentti”
-
-Rekisteröintisivu (ei toteutettu)
-*	nimimerkin valinta
-*	salasana
-*	“luo käyttäjä”
-*	linkki kirjaudu sisään sivulle
+* sisältää järjestelmän kuvavirran, yksi kuva kerrallaan näkyvissä
+* kuvien selaus: edellinen ja seuraava
+* kuvien lisäys omista tiedostoista
+* kuvien kommentointimahdollisuus
+* mahdollisuus tykätä/ei-tykätä kuvasta
+* linkki profiiliin ja uloskirjautumiseen
 
 
+_Toteutus ei onnistunut:_
 
+Rekisteröitymissivu
+* Tarkoituksena oli luoda sivu, jossa uusi käyttäjä voisi rekisteröityä palveluun. Rekisteröitymisen jälkeen käyttäjä voisi siirtyä kirjautumissivulle ja kirjauduttua lisätä omia kuviaan. Rekisteröitymissivun saimme tehtyä, mutta sen liittäminen projektiin ei onnistunut. 
+
+Kirjautumattoman käyttäjän, kirjautuneen käyttäjän ja adminin ero
+* Tarkoituksena oli, että kirjautumaton käyttäjä voisi nähdä kuvavirran. Toteutus ei onnistunut rekisteröitymissivua luodessa tulleiden ongelmien vuoksi
+* Tarkoituksena oli, että admin voisi esimerkiksi poistaa kuvan
+* Näihin tarvittavan toteutuksen runko on tehtynä, mutta itse toteutus jäi hieman kesken
+
+Oma kirjautumissivu
+* Palvelussa on jo kirjautumissivu, mutta olisimme halunneet erilaisen kirjautumissivun, jossa olisi linkki rekisteröitymissivulle. Tämän sivun saimme tehtyä, mutta sen liittäminen projektiin ei jostain syystä onnistunut.
+
+Tagays
+* tietokantataulu, joka on kuvan tietokantataulun kanssa monen-suhde-moneen yhteydessä
+* Tarkoituksena: Käyttäjä voi lisätä kuvaansa tageja. Yhteen tagiin voisi liittyä muitakin kuvia, ja kullakin kuvalla voisi olla useita tageja. Tagia klikatessa käyttäjän olisi ollut mahdollista nähdä muut samalla tagilla merkityt kuvat.

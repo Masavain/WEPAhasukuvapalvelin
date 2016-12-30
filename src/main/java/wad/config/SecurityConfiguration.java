@@ -38,9 +38,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                //Ei vielä käytössä, mutta tähän voidaan jatkokehityksessä määrittää esim. rekisteröitymättömän käyttäjän näkemät sivt jne.
                 .antMatchers("/etusivu").permitAll()
                 .antMatchers("/salatutsivut").hasAnyAuthority("USER", "ADMIN")
                 .antMatchers("/adminsivut").hasAnyAuthority("ADMIN")
+                
                 .anyRequest().authenticated();
         http
                 .formLogin()
