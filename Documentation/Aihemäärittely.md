@@ -33,8 +33,10 @@ _Toteutus ei onnistunut:_
 Rekisteröitymissivu
 * Tarkoituksena oli luoda sivu, jossa uusi käyttäjä voisi rekisteröityä palveluun. Rekisteröitymisen jälkeen käyttäjä voisi siirtyä kirjautumissivulle ja kirjauduttua lisätä omia kuviaan. Rekisteröitymissivun saimme tehtyä, mutta sen liittäminen projektiin ei onnistunut. 
 
-Kuvavirran näkyminen kirjautumattomalle käyttäjälle
+Kirjautumattoman käyttäjän, kirjautuneen käyttäjän ja adminin ero
 * Tarkoituksena oli, että kirjautumaton käyttäjä voisi nähdä kuvavirran. Toteutus ei onnistunut rekisteröitymissivua luodessa tulleiden ongelmien vuoksi
+* Tarkoituksena oli, että admin voisi esimerkiksi poistaa kuvan
+* Näihin tarvittavan toteutuksen runko on tehtynä, mutta itse toteutus jäi hieman kesken
 
 Oma kirjautumissivu
 * Palvelussa on jo kirjautumissivu, mutta olisimme halunneet erilaisen kirjautumissivun, jossa olisi linkki rekisteröitymissivulle. Tämän sivun saimme tehtyä, mutta sen liittäminen projektiin ei jostain syystä onnistunut.
